@@ -1,0 +1,159 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Henry Kao\Documents\School\CPEN311\Lab 2\Task2_3_4\simulation\modelsim
+Etask2
+Z1 w1475027517
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\Henry Kao\Documents\School\CPEN311\Lab 2\Task2_3_4\simulation\modelsim
+Z6 8C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/task2.vhd
+Z7 FC:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/task2.vhd
+l0
+L7
+VI;DdeK4b^kn@>IVG:>WG]0
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1475033881.179000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/task2.vhd|
+Z11 !s107 C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/task2.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+!s100 K?Di<`cEB7SLS:0l10Q0G1
+!i10b 1
+Artl
+R2
+R3
+R4
+DEx4 work 5 task2 0 22 I;DdeK4b^kn@>IVG:>WG]0
+l66
+L19
+V7M[T?blz`7k?0V8^ac6RF0
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!s100 cVJfSZIh8i_?<hC7V^U?>0
+!i10b 1
+vvga_adapter
+IOYCkQf?fBM5Al:ccWS8`?2
+VVe24[bzTmI;gC2?:^g4W10
+R5
+Z14 w1474995235
+8C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_adapter.v
+FC:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_adapter.v
+L0 78
+Z15 OV;L;10.1d;51
+r1
+31
+Z16 o-vlog01compat -work work -O0
+Z17 !s92 -vlog01compat -work work {+incdir+C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL} -O0
+!i10b 1
+!s100 <X6HNX2SW8k?=fKeLE@=b2
+!s85 0
+!s108 1475033880.765000
+!s107 C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_adapter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL|C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_adapter.v|
+!s101 -O0
+vvga_address_translator
+IlL7kNDUhB1:c]zZ@4Qf`31
+VjkDA>HTV?84U;TlaBA;?j1
+R5
+R14
+8C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_address_translator.v
+FC:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_address_translator.v
+L0 4
+R15
+r1
+31
+R16
+R17
+!i10b 1
+!s100 RjXk_XlADmnN>bfbCZa:j0
+!s85 0
+!s108 1475033880.685000
+!s107 C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_address_translator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL|C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_address_translator.v|
+!s101 -O0
+vvga_controller
+IeDA2AIk4[dS;O0<3V8cDV3
+V6i6iTGO[HicXM<>d6^E2N3
+R5
+R14
+8C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_controller.v
+FC:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_controller.v
+L0 9
+R15
+r1
+31
+R16
+R17
+!i10b 1
+!s100 n6<870W=lY[M<E7K`1:WJ1
+!s85 0
+!s108 1475033880.582000
+!s107 C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL|C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_controller.v|
+!s101 -O0
+vvga_pll
+I=fKZ`UVS1<QL]B9BKF4Ag1
+VaJ5@f_ChHz^We^IfRHJId2
+R5
+w1474995236
+8C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_pll.v
+FC:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_pll.v
+L0 36
+R15
+r1
+31
+R16
+R17
+!i10b 1
+!s100 I2_:ockQ<3PRIIi7=8m2h1
+!s85 0
+!s108 1475033880.466000
+!s107 C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL|C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_pll.v|
+!s101 -O0
+Exaxis_controller
+Z18 w1475035056
+R2
+R3
+R4
+R5
+Z19 8C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/xaxis_controller.vhd
+Z20 FC:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/xaxis_controller.vhd
+l0
+L7
+V;m=j^IY04b2Uj124J;eD01
+!s100 ??7UZHahaQF1c68=<QQB]0
+R8
+31
+!i10b 1
+Z21 !s108 1475035059.623000
+Z22 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/xaxis_controller.vhd|
+Z23 !s107 C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/xaxis_controller.vhd|
+R12
+R13
+Abehaviorial
+R2
+R3
+R4
+Z24 DEx4 work 16 xaxis_controller 0 22 ;m=j^IY04b2Uj124J;eD01
+l22
+L15
+VUZ6Z`hUZz3P4fP6^kBWRi0
+!s100 _CAGim>dD6`>QQjHD0deh1
+R8
+31
+!i10b 1
+R21
+R22
+R23
+R12
+R13
