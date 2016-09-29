@@ -1,18 +1,21 @@
 |task2
 CLOCK_50 => vga_adapter:vga_u0.clock
+CLOCK_50 => state_machine:sm.clock
 CLOCK_50 => yaxis_controller:y_axis.clock_50
+CLOCK_50 => xaxis_controller:x_axis.clock_50
 KEY[0] => ~NO_FANOUT~
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
 KEY[3] => vga_adapter:vga_u0.resetn
-SW[0] => vga_adapter:vga_u0.x[0]
-SW[1] => vga_adapter:vga_u0.x[1]
-SW[2] => vga_adapter:vga_u0.x[2]
-SW[3] => vga_adapter:vga_u0.x[3]
-SW[4] => vga_adapter:vga_u0.x[4]
-SW[5] => vga_adapter:vga_u0.x[5]
-SW[6] => vga_adapter:vga_u0.x[6]
-SW[7] => vga_adapter:vga_u0.x[7]
+KEY[3] => state_machine:sm.resetb
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
 SW[8] => ~NO_FANOUT~
 SW[9] => ~NO_FANOUT~
 SW[10] => ~NO_FANOUT~
@@ -20,9 +23,9 @@ SW[11] => ~NO_FANOUT~
 SW[12] => ~NO_FANOUT~
 SW[13] => ~NO_FANOUT~
 SW[14] => ~NO_FANOUT~
-SW[15] => ~NO_FANOUT~
-SW[16] => ~NO_FANOUT~
-SW[17] => ~NO_FANOUT~
+SW[15] => vga_adapter:vga_u0.colour[0]
+SW[16] => vga_adapter:vga_u0.colour[1]
+SW[17] => vga_adapter:vga_u0.colour[2]
 VGA_R[0] <= vga_adapter:vga_u0.VGA_R[0]
 VGA_R[1] <= vga_adapter:vga_u0.VGA_R[1]
 VGA_R[2] <= vga_adapter:vga_u0.VGA_R[2]
@@ -1211,6 +1214,31 @@ mem_address[13] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 mem_address[14] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|task2|state_machine:sm
+clock => plot~reg0.CLK
+clock => loadx~reg0.CLK
+clock => loady~reg0.CLK
+clock => inity~reg0.CLK
+clock => initx~reg0.CLK
+clock => state~2.DATAIN
+resetb => state~4.DATAIN
+resetb => plot~reg0.ENA
+resetb => initx~reg0.ENA
+resetb => inity~reg0.ENA
+resetb => loady~reg0.ENA
+resetb => loadx~reg0.ENA
+xdone => state.DATAA
+xdone => state.DATAA
+ydone => state.OUTPUTSELECT
+ydone => state.OUTPUTSELECT
+ydone => Selector1.IN3
+initx <= initx~reg0.DB_MAX_OUTPUT_PORT_TYPE
+inity <= inity~reg0.DB_MAX_OUTPUT_PORT_TYPE
+loady <= loady~reg0.DB_MAX_OUTPUT_PORT_TYPE
+loadx <= loadx~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plot <= plot~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |task2|yaxis_controller:y_axis
 clock_50 => ydone~reg0.CLK
 clock_50 => y_address[0]~reg0.CLK
@@ -1256,5 +1284,58 @@ y_address[3] <= y_address[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 y_address[4] <= y_address[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 y_address[5] <= y_address[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 y_address[6] <= y_address[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|task2|xaxis_controller:x_axis
+clock_50 => xdone~reg0.CLK
+clock_50 => x_address[0]~reg0.CLK
+clock_50 => x_address[1]~reg0.CLK
+clock_50 => x_address[2]~reg0.CLK
+clock_50 => x_address[3]~reg0.CLK
+clock_50 => x_address[4]~reg0.CLK
+clock_50 => x_address[5]~reg0.CLK
+clock_50 => x_address[6]~reg0.CLK
+clock_50 => x_address[7]~reg0.CLK
+clock_50 => x_value[0].CLK
+clock_50 => x_value[1].CLK
+clock_50 => x_value[2].CLK
+clock_50 => x_value[3].CLK
+clock_50 => x_value[4].CLK
+clock_50 => x_value[5].CLK
+clock_50 => x_value[6].CLK
+clock_50 => x_value[7].CLK
+clock_50 => xp[0].CLK
+clock_50 => xp[1].CLK
+clock_50 => xp[2].CLK
+clock_50 => xp[3].CLK
+clock_50 => xp[4].CLK
+clock_50 => xp[5].CLK
+clock_50 => xp[6].CLK
+clock_50 => xp[7].CLK
+loadx => xp.OUTPUTSELECT
+loadx => xp.OUTPUTSELECT
+loadx => xp.OUTPUTSELECT
+loadx => xp.OUTPUTSELECT
+loadx => xp.OUTPUTSELECT
+loadx => xp.OUTPUTSELECT
+loadx => xp.OUTPUTSELECT
+loadx => xp.OUTPUTSELECT
+initx => xp.OUTPUTSELECT
+initx => xp.OUTPUTSELECT
+initx => xp.OUTPUTSELECT
+initx => xp.OUTPUTSELECT
+initx => xp.OUTPUTSELECT
+initx => xp.OUTPUTSELECT
+initx => xp.OUTPUTSELECT
+initx => xp.OUTPUTSELECT
+xdone <= xdone~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_address[0] <= x_address[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_address[1] <= x_address[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_address[2] <= x_address[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_address[3] <= x_address[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_address[4] <= x_address[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_address[5] <= x_address[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_address[6] <= x_address[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_address[7] <= x_address[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

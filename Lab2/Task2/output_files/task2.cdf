@@ -4,10 +4,10 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C35F672) Path("C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/output_files/") File("task2.sof") MfrSpec(OpMask(1));
+		Device PartName(EPCS16) Path("C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/output_files/") File("task2.pof") MfrSpec(OpMask(1) Child_OpMask(1 1));
 
 ChainEnd;
 
 AlteraBegin;
-	ChainType(JTAG);
+	ChainType(asc);
 AlteraEnd;

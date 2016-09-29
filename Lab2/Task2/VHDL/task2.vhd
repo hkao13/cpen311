@@ -44,6 +44,14 @@ architecture rtl of task2 is
           VGA_HS, VGA_VS, VGA_BLANK, VGA_SYNC, VGA_CLK : out std_logic);
   end component;
   
+  --Component for the state machine
+  component state_machine
+	port (
+		clock, resetb, xdone, ydone : in std_logic;
+		initx, inity, loady, loadx, plot : out std_logic
+	);
+	end component;
+  
   --Component for the x-axis pixel controller
   component xaxis_controller
     port (
@@ -71,18 +79,16 @@ architecture rtl of task2 is
   
   signal x_done : std_logic;
   signal y_done : std_logic;
-  signal load_x : std_logic;
-  signal load_y : std_logic;
+  signal x_init : std_logic;
+  signal y_init : std_logic;
+  signal x_load : std_logic;
+  signal y_load : std_logic;
   
 begin
   
   resetn <= KEY(3);
-  x      <= SW(7 downto 0);
-  --y      <= SW(14 downto 8);
-  colour <= RED;
-  --plot   <= not KEY(0);
-  load_x <= '1';
-  load_y <= '1';
+
+  colour <= SW(17 downto 15);
   
   -- instantiate vga adapter
   
@@ -93,7 +99,7 @@ begin
 					colour    => colour,
 					x         => x,
 					y         => y,
-					plot      => not plot,
+					plot      => plot,
 					VGA_R     => VGA_R,
 					VGA_G     => VGA_G,
 					VGA_B     => VGA_B,
@@ -106,19 +112,32 @@ begin
 
   -- Your code to fill the screen goes here
   
+	sm : state_machine
+		port map(clock => CLOCK_50,
+					resetb => resetn,
+					xdone => x_done,
+					ydone => y_done,
+					initx => x_init, 
+					inity => y_init, 
+					loady => y_load, 
+					loadx => x_load, 
+					plot => plot);
+					
+		
+  
 	y_axis : yaxis_controller
-		port map(inity => '0',
+		port map(inity => y_init,
 					clock_50 => CLOCK_50,
-					loady => load_y,
-					ydone => plot,
+					loady => y_load,
+					ydone => y_done,
 					y_address => y);
   
---	x_axis : xaxis_controller
---		port map(initx => resetn, -- reset low
---					clock_50 => CLOCK_50,
---					loadx => load_x,
---					xdone => x_done,
---					x_address => x);
+	x_axis : xaxis_controller
+		port map(initx => x_init,
+					clock_50 => CLOCK_50,
+					loadx => x_load,
+					xdone => x_done,
+					x_address => x);
   
   
 end RTL;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for task2
-Wed Sep 28 13:30:48 2016
+Thu Sep 29 10:14:25 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -15,21 +15,21 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated
- 14. Source assignments for vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1
- 15. Parameter Settings for User Entity Instance: vga_adapter:vga_u0
- 16. Parameter Settings for User Entity Instance: vga_adapter:vga_u0|vga_address_translator:user_input_translator
- 17. Parameter Settings for User Entity Instance: vga_adapter:vga_u0|altsyncram:VideoMemory
- 18. Parameter Settings for User Entity Instance: vga_adapter:vga_u0|vga_pll:mypll|altpll:altpll_component
- 19. Parameter Settings for User Entity Instance: vga_adapter:vga_u0|vga_controller:controller
- 20. Parameter Settings for User Entity Instance: vga_adapter:vga_u0|vga_controller:controller|vga_address_translator:controller_translator
- 21. altsyncram Parameter Settings by Entity Instance
- 22. altpll Parameter Settings by Entity Instance
- 23. Port Connectivity Checks: "yaxis_controller:y_axis"
- 24. Port Connectivity Checks: "vga_adapter:vga_u0"
+ 10. State Machine - |task2|state_machine:sm|state
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated
+ 16. Source assignments for vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1
+ 17. Parameter Settings for User Entity Instance: vga_adapter:vga_u0
+ 18. Parameter Settings for User Entity Instance: vga_adapter:vga_u0|vga_address_translator:user_input_translator
+ 19. Parameter Settings for User Entity Instance: vga_adapter:vga_u0|altsyncram:VideoMemory
+ 20. Parameter Settings for User Entity Instance: vga_adapter:vga_u0|vga_pll:mypll|altpll:altpll_component
+ 21. Parameter Settings for User Entity Instance: vga_adapter:vga_u0|vga_controller:controller
+ 22. Parameter Settings for User Entity Instance: vga_adapter:vga_u0|vga_controller:controller|vga_address_translator:controller_translator
+ 23. altsyncram Parameter Settings by Entity Instance
+ 24. altpll Parameter Settings by Entity Instance
  25. Elapsed Time Per Partition
  26. Analysis & Synthesis Messages
 
@@ -57,15 +57,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 28 13:30:48 2016           ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 29 10:14:25 2016           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; task2                                           ;
 ; Top-level Entity Name              ; task2                                           ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 137                                             ;
-;     Total combinational functions  ; 131                                             ;
-;     Dedicated logic registers      ; 47                                              ;
-; Total registers                    ; 47                                              ;
+; Total logic elements               ; 175                                             ;
+;     Total combinational functions  ; 167                                             ;
+;     Dedicated logic registers      ; 68                                              ;
+; Total registers                    ; 68                                              ;
 ; Total pins                         ; 58                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 57,600                                          ;
@@ -170,69 +170,71 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
-; VHDL/vga_pll.v                   ; yes             ; User Wizard-Generated File   ; C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_pll.v                ;         ;
-; VHDL/vga_controller.v            ; yes             ; User Verilog HDL File        ; C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_controller.v         ;         ;
-; VHDL/vga_address_translator.v    ; yes             ; User Verilog HDL File        ; C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_address_translator.v ;         ;
-; VHDL/vga_adapter.v               ; yes             ; User Verilog HDL File        ; C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_adapter.v            ;         ;
-; VHDL/task2.vhd                   ; yes             ; User VHDL File               ; C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/task2.vhd                ;         ;
-; yaxis_controller.vhd             ; yes             ; User VHDL File               ; C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/yaxis_controller.vhd          ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                          ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                             ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                          ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                          ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                           ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                              ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                              ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
-; db/altsyncram_ncg1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/db/altsyncram_ncg1.tdf        ;         ;
-; db/altsyncram_n6r1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/db/altsyncram_n6r1.tdf        ;         ;
-; db/decode_6oa.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/db/decode_6oa.tdf             ;         ;
-; db/mux_hib.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/db/mux_hib.tdf                ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                              ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                         ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc                       ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                       ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; VHDL/vga_pll.v                   ; yes             ; User Wizard-Generated File   ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/VHDL/vga_pll.v                ;         ;
+; VHDL/vga_controller.v            ; yes             ; User Verilog HDL File        ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/VHDL/vga_controller.v         ;         ;
+; VHDL/vga_address_translator.v    ; yes             ; User Verilog HDL File        ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/VHDL/vga_address_translator.v ;         ;
+; VHDL/vga_adapter.v               ; yes             ; User Verilog HDL File        ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/VHDL/vga_adapter.v            ;         ;
+; VHDL/task2.vhd                   ; yes             ; User VHDL File               ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/VHDL/task2.vhd                ;         ;
+; xaxis_controller.vhd             ; yes             ; User VHDL File               ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/xaxis_controller.vhd          ;         ;
+; yaxis_controller.vhd             ; yes             ; User VHDL File               ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/yaxis_controller.vhd          ;         ;
+; state_machine.vhd                ; yes             ; User VHDL File               ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/state_machine.vhd             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                                  ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                           ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                     ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                                  ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                  ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                                   ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                      ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                      ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                    ;         ;
+; db/altsyncram_ncg1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/db/altsyncram_ncg1.tdf        ;         ;
+; db/altsyncram_n6r1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/db/altsyncram_n6r1.tdf        ;         ;
+; db/decode_6oa.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/db/decode_6oa.tdf             ;         ;
+; db/mux_hib.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/db/mux_hib.tdf                ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                                      ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                                 ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc                               ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                               ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                  ;
-+---------------------------------------------+----------------------------------------------------------------+
-; Resource                                    ; Usage                                                          ;
-+---------------------------------------------+----------------------------------------------------------------+
-; Estimated Total logic elements              ; 137                                                            ;
-;                                             ;                                                                ;
-; Total combinational functions               ; 131                                                            ;
-; Logic element usage by number of LUT inputs ;                                                                ;
-;     -- 4 input functions                    ; 50                                                             ;
-;     -- 3 input functions                    ; 28                                                             ;
-;     -- <=2 input functions                  ; 53                                                             ;
-;                                             ;                                                                ;
-; Logic elements by mode                      ;                                                                ;
-;     -- normal mode                          ; 75                                                             ;
-;     -- arithmetic mode                      ; 56                                                             ;
-;                                             ;                                                                ;
-; Total registers                             ; 47                                                             ;
-;     -- Dedicated logic registers            ; 47                                                             ;
-;     -- I/O registers                        ; 0                                                              ;
-;                                             ;                                                                ;
-; I/O pins                                    ; 58                                                             ;
-; Total memory bits                           ; 57600                                                          ;
-; Embedded Multiplier 9-bit elements          ; 0                                                              ;
-; Total PLLs                                  ; 1                                                              ;
-;     -- PLLs                                 ; 1                                                              ;
-;                                             ;                                                                ;
-; Maximum fan-out node                        ; vga_adapter:vga_u0|vga_pll:mypll|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 48                                                             ;
-; Total fan-out                               ; 973                                                            ;
-; Average fan-out                             ; 3.86                                                           ;
-+---------------------------------------------+----------------------------------------------------------------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 175      ;
+;                                             ;          ;
+; Total combinational functions               ; 167      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 63       ;
+;     -- 3 input functions                    ; 34       ;
+;     -- <=2 input functions                  ; 70       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 104      ;
+;     -- arithmetic mode                      ; 63       ;
+;                                             ;          ;
+; Total registers                             ; 68       ;
+;     -- Dedicated logic registers            ; 68       ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 58       ;
+; Total memory bits                           ; 57600    ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Total PLLs                                  ; 1        ;
+;     -- PLLs                                 ; 1        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 52       ;
+; Total fan-out                               ; 1130     ;
+; Average fan-out                             ; 3.66     ;
++---------------------------------------------+----------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -240,7 +242,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                             ; Library Name ;
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |task2                                                  ; 131 (1)           ; 47 (0)       ; 57600       ; 0            ; 0       ; 0         ; 58   ; 0            ; |task2                                                                                                                          ; work         ;
+; |task2                                                  ; 167 (0)           ; 68 (0)       ; 57600       ; 0            ; 0       ; 0         ; 58   ; 0            ; |task2                                                                                                                          ; work         ;
+;    |state_machine:sm|                                   ; 5 (5)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |task2|state_machine:sm                                                                                                         ; work         ;
 ;    |vga_adapter:vga_u0|                                 ; 113 (3)           ; 32 (0)       ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |task2|vga_adapter:vga_u0                                                                                                       ; work         ;
 ;       |altsyncram:VideoMemory|                          ; 21 (0)            ; 6 (0)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |task2|vga_adapter:vga_u0|altsyncram:VideoMemory                                                                                ; work         ;
 ;          |altsyncram_ncg1:auto_generated|               ; 21 (0)            ; 6 (0)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |task2|vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated                                                 ; work         ;
@@ -254,7 +257,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |vga_address_translator:controller_translator| ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |task2|vga_adapter:vga_u0|vga_controller:controller|vga_address_translator:controller_translator                                ; work         ;
 ;       |vga_pll:mypll|                                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |task2|vga_adapter:vga_u0|vga_pll:mypll                                                                                         ; work         ;
 ;          |altpll:altpll_component|                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |task2|vga_adapter:vga_u0|vga_pll:mypll|altpll:altpll_component                                                                 ; work         ;
-;    |yaxis_controller:y_axis|                            ; 17 (17)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |task2|yaxis_controller:y_axis                                                                                                  ; work         ;
+;    |xaxis_controller:x_axis|                            ; 25 (25)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |task2|xaxis_controller:x_axis                                                                                                  ; work         ;
+;    |yaxis_controller:y_axis|                            ; 24 (24)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |task2|yaxis_controller:y_axis                                                                                                  ; work         ;
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -268,23 +272,60 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------------+----------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                         ; IP Include File                                                            ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------------+----------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |task2|vga_adapter:vga_u0|vga_pll:mypll ; C:/Users/Henry Kao/Documents/School/CPEN311/Lab 2/Task2_3_4/VHDL/vga_pll.v ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------------+----------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                        ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------+------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                         ; IP Include File                                                                    ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------+------------------------------------------------------------------------------------+
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |task2|vga_adapter:vga_u0|vga_pll:mypll ; C:/Users/Henry Kao/Documents/School/CPEN_311_git/cpen311/Lab2/Task2/VHDL/vga_pll.v ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------+------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; yaxis_controller:y_axis|yp[0..6]      ; Lost fanout        ;
-; Total Number of Removed Registers = 7 ;                    ;
-+---------------------------------------+--------------------+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------+
+; State Machine - |task2|state_machine:sm|state                                      ;
++-------------------+------------+-------------------+------------------+------------+
+; Name              ; state.done ; state.increment_y ; state.run_x_line ; state.idle ;
++-------------------+------------+-------------------+------------------+------------+
+; state.idle        ; 0          ; 0                 ; 0                ; 0          ;
+; state.run_x_line  ; 0          ; 0                 ; 1                ; 1          ;
+; state.increment_y ; 0          ; 1                 ; 0                ; 1          ;
+; state.done        ; 1          ; 0                 ; 0                ; 1          ;
++-------------------+------------+-------------------+------------------+------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++----------------------------------------+--------------------------------------------------+
+; Register name                          ; Reason for Removal                               ;
++----------------------------------------+--------------------------------------------------+
+; state_machine:sm|loadx                 ; Stuck at VCC due to stuck port data_in           ;
+; xaxis_controller:x_axis|xp[0..7]       ; Lost fanout                                      ;
+; yaxis_controller:y_axis|yp[0]          ; Merged with yaxis_controller:y_axis|y_address[0] ;
+; yaxis_controller:y_axis|yp[1]          ; Merged with yaxis_controller:y_axis|y_address[1] ;
+; yaxis_controller:y_axis|yp[2]          ; Merged with yaxis_controller:y_axis|y_address[2] ;
+; yaxis_controller:y_axis|yp[3]          ; Merged with yaxis_controller:y_axis|y_address[3] ;
+; yaxis_controller:y_axis|yp[4]          ; Merged with yaxis_controller:y_axis|y_address[4] ;
+; yaxis_controller:y_axis|yp[5]          ; Merged with yaxis_controller:y_axis|y_address[5] ;
+; yaxis_controller:y_axis|yp[6]          ; Merged with yaxis_controller:y_axis|y_address[6] ;
+; state_machine:sm|initx                 ; Merged with state_machine:sm|plot                ;
+; state_machine:sm|loady                 ; Merged with state_machine:sm|plot                ;
+; xaxis_controller:x_axis|x_value[5]     ; Merged with xaxis_controller:x_axis|x_address[5] ;
+; xaxis_controller:x_axis|x_value[6]     ; Merged with xaxis_controller:x_axis|x_address[6] ;
+; Total Number of Removed Registers = 20 ;                                                  ;
++----------------------------------------+--------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                        ;
++------------------------+---------------------------+---------------------------------------------------------------+
+; Register name          ; Reason for Removal        ; Registers Removed due to This Register                        ;
++------------------------+---------------------------+---------------------------------------------------------------+
+; state_machine:sm|loadx ; Stuck at VCC              ; xaxis_controller:x_axis|xp[6], xaxis_controller:x_axis|xp[5], ;
+;                        ; due to stuck port data_in ; xaxis_controller:x_axis|xp[4], xaxis_controller:x_axis|xp[3], ;
+;                        ;                           ; xaxis_controller:x_axis|xp[2], xaxis_controller:x_axis|xp[1], ;
+;                        ;                           ; xaxis_controller:x_axis|xp[0]                                 ;
++------------------------+---------------------------+---------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -292,12 +333,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 47    ;
+; Total registers                              ; 68    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 20    ;
+; Number of registers using Asynchronous Clear ; 24    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 2     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -308,6 +349,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |task2|vga_adapter:vga_u0|vga_controller:controller|yCounter[9] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |task2|yaxis_controller:y_axis|yp                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
@@ -856,26 +898,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+----------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Port Connectivity Checks: "yaxis_controller:y_axis" ;
-+-------+-------+----------+--------------------------+
-; Port  ; Type  ; Severity ; Details                  ;
-+-------+-------+----------+--------------------------+
-; loady ; Input ; Info     ; Stuck at VCC             ;
-; inity ; Input ; Info     ; Stuck at GND             ;
-+-------+-------+----------+--------------------------+
-
-
-+------------------------------------------------+
-; Port Connectivity Checks: "vga_adapter:vga_u0" ;
-+--------------+-------+----------+--------------+
-; Port         ; Type  ; Severity ; Details      ;
-+--------------+-------+----------+--------------+
-; colour[1..0] ; Input ; Info     ; Stuck at GND ;
-; colour[2]    ; Input ; Info     ; Stuck at VCC ;
-+--------------+-------+----------+--------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -891,7 +913,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Sep 28 13:30:45 2016
+    Info: Processing started: Thu Sep 29 10:14:22 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off task2 -c task2
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file vhdl/vga_pll.v
@@ -911,8 +933,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file xaxis_c
 Info (12021): Found 2 design units, including 1 entities, in source file yaxis_controller.vhd
     Info (12022): Found design unit 1: yaxis_controller-behaviorial
     Info (12023): Found entity 1: yaxis_controller
+Info (12021): Found 2 design units, including 1 entities, in source file state_machine.vhd
+    Info (12022): Found design unit 1: state_machine-behaviour
+    Info (12023): Found entity 1: state_machine
 Info (12127): Elaborating entity "task2" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at task2.vhd(74): object "load_x" assigned a value but never read
 Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:vga_u0"
 Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:vga_u0|vga_address_translator:user_input_translator"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:vga_u0|altsyncram:VideoMemory"
@@ -963,16 +987,26 @@ Info (12133): Instantiated megafunction "vga_adapter:vga_u0|vga_pll:mypll|altpll
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:vga_u0|vga_controller:controller"
+Info (12128): Elaborating entity "state_machine" for hierarchy "state_machine:sm"
 Info (12128): Elaborating entity "yaxis_controller" for hierarchy "yaxis_controller:y_axis"
+Info (12128): Elaborating entity "xaxis_controller" for hierarchy "xaxis_controller:x_axis"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_SYNC" is stuck at VCC
-Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 13 input pin(s) that do not drive logic
+Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[0]"
     Warning (15610): No output dependent on input pin "KEY[1]"
     Warning (15610): No output dependent on input pin "KEY[2]"
+    Warning (15610): No output dependent on input pin "SW[0]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "SW[8]"
     Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "SW[10]"
@@ -980,19 +1014,16 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[12]"
     Warning (15610): No output dependent on input pin "SW[13]"
     Warning (15610): No output dependent on input pin "SW[14]"
-    Warning (15610): No output dependent on input pin "SW[15]"
-    Warning (15610): No output dependent on input pin "SW[16]"
-    Warning (15610): No output dependent on input pin "SW[17]"
-Info (21057): Implemented 221 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 262 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 35 output pins
-    Info (21061): Implemented 147 logic cells
+    Info (21061): Implemented 188 logic cells
     Info (21064): Implemented 15 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 19 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
     Info: Peak virtual memory: 545 megabytes
-    Info: Processing ended: Wed Sep 28 13:30:49 2016
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Thu Sep 29 10:14:25 2016
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
 

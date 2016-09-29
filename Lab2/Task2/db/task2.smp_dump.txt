@@ -1,0 +1,7 @@
+
+State Machine - |task2|state_machine:sm|state
+Name state.done state.increment_y state.run_x_line state.idle 
+state.idle 0 0 0 0 
+state.run_x_line 0 0 1 1 
+state.increment_y 0 1 0 1 
+state.done 1 0 0 1 
