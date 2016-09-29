@@ -1,5 +1,5 @@
 Analysis & Synthesis report for task2
-Thu Sep 29 10:14:25 2016
+Thu Sep 29 12:10:01 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 29 10:14:25 2016           ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 29 12:10:01 2016           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; task2                                           ;
 ; Top-level Entity Name              ; task2                                           ;
@@ -232,8 +232,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;          ;
 ; Maximum fan-out node                        ; CLOCK_50 ;
 ; Maximum fan-out                             ; 52       ;
-; Total fan-out                               ; 1130     ;
-; Average fan-out                             ; 3.66     ;
+; Total fan-out                               ; 1115     ;
+; Average fan-out                             ; 3.61     ;
 +---------------------------------------------+----------+
 
 
@@ -913,7 +913,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Sep 29 10:14:22 2016
+    Info: Processing started: Thu Sep 29 12:09:58 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off task2 -c task2
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file vhdl/vga_pll.v
@@ -995,7 +995,7 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 18 input pin(s) that do not drive logic
+Warning (21074): Design contains 21 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[0]"
     Warning (15610): No output dependent on input pin "KEY[1]"
     Warning (15610): No output dependent on input pin "KEY[2]"
@@ -1014,16 +1014,19 @@ Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[12]"
     Warning (15610): No output dependent on input pin "SW[13]"
     Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+    Warning (15610): No output dependent on input pin "SW[16]"
+    Warning (15610): No output dependent on input pin "SW[17]"
 Info (21057): Implemented 262 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 35 output pins
     Info (21061): Implemented 188 logic cells
     Info (21064): Implemented 15 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 26 warnings
     Info: Peak virtual memory: 545 megabytes
-    Info: Processing ended: Thu Sep 29 10:14:25 2016
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Thu Sep 29 12:10:02 2016
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
 

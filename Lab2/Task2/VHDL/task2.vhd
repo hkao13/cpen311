@@ -87,8 +87,6 @@ architecture rtl of task2 is
 begin
   
   resetn <= KEY(3);
-
-  colour <= SW(17 downto 15);
   
   -- instantiate vga adapter
   
@@ -138,6 +136,14 @@ begin
 					loadx => x_load,
 					xdone => x_done,
 					x_address => x);
+					
+	-- Choose the color
+	process(x)
+	variable temp : integer;
+	begin
+		temp := to_integer(unsigned(x)) mod 8;
+		colour <= std_logic_vector(to_unsigned(temp, colour'length));
+	end process;
   
   
 end RTL;
