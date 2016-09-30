@@ -1,0 +1,17 @@
+
+State Machine - |task3|state_machine:sm|state
+Name state.circ_done state.oct8 state.oct7 state.oct6 state.oct5 state.oct4 state.oct3 state.oct2 state.oct1 state.init_circle state.clear_done state.increment_y state.run_x_line state.idle 
+state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.run_x_line 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.increment_y 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.clear_done 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.init_circle 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.oct1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.oct2 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.oct3 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.oct4 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.oct5 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.oct6 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.oct7 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.oct8 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.circ_done 1 0 0 0 0 0 0 0 0 0 0 0 0 1 

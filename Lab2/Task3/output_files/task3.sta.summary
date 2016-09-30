@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -6.282
+TNS   : -1201.060
+
+Type  : Slow Model Setup 'state_machine:sm|initc'
+Slack : -1.180
+TNS   : -4.543
+
+Type  : Slow Model Setup 'vga_u0|mypll|altpll_component|pll|clk[0]'
+Slack : 33.074
+TNS   : 0.000
+
+Type  : Slow Model Hold 'state_machine:sm|initc'
+Slack : 0.335
+TNS   : 0.000
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'vga_u0|mypll|altpll_component|pll|clk[0]'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'state_machine:sm|initc'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : 7.620
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'vga_u0|mypll|altpll_component|pll|clk[0]'
+Slack : 17.873
+TNS   : 0.000
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -2.121
+TNS   : -394.800
+
+Type  : Fast Model Setup 'state_machine:sm|initc'
+Slack : 0.164
+TNS   : 0.000
+
+Type  : Fast Model Setup 'vga_u0|mypll|altpll_component|pll|clk[0]'
+Slack : 36.902
+TNS   : 0.000
+
+Type  : Fast Model Hold 'state_machine:sm|initc'
+Slack : 0.063
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'vga_u0|mypll|altpll_component|pll|clk[0]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'state_machine:sm|initc'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : 7.620
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'vga_u0|mypll|altpll_component|pll|clk[0]'
+Slack : 17.873
+TNS   : 0.000
+
+------------------------------------------------------------
